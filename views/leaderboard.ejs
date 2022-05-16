@@ -1,0 +1,76 @@
+<%- include('./partials/header.ejs') %>
+  <link rel="stylesheet" href="/leaderboard/css/leaderboard.css">
+  <section id="hero" class="d-flex align-items-center">
+    <div style="margin-bottom:-2em;" class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-xs-9 text-center ">
+          <h1>LeaderBoard</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="row leaderboard_row my-3">
+        <h3 class="col-md-1 col-xs-2">
+          #
+        </h3>
+        <h3 class="col-md-4 col-xs-4">
+          Name
+        </h3>
+        <h3 class="col-md-4 col-xs-4">
+          Registration No.
+        </h3>
+        <h3 class="col-md-1 col-xs-2">
+          BITS
+        </h3>
+      </div>
+      <% for (let i=0; i < participants.length; i++) { %>
+        <div class="row leaderboard_row">
+          <h4 class="col-md-1 col-xs-2">
+            <%= i+1 %>.
+          </h4>
+          <h4 class="col-md-4 col-xs-4">
+            <%=participants[i].name%>
+          </h4>
+          <h4 class="col-md-4 col-xs-4">
+            <%=participants[i].regNumber%>
+          </h4>
+          <h4 class="col-md-1 col-xs-2">
+            <%=participants[i].score%>
+          </h4>
+        </div>
+        <%}%>
+    </div>
+  </div>
+
+  <div class="row tabs_div text-center my-5">
+    <button class="tab_btn col-md-1 col-xs-2" onclick="setInitialEntries()">1</button>
+    <button class="tab_btn col-md-1 col-xs-2" onclick="setEntries(51, 100)">2</button>
+    <button class="tab_btn col-md-1 col-xs-2" onclick="setEntries(101, 150)">3</button>
+    <button class="tab_btn col-md-1 col-xs-2" onclick="setEntries(151, 200)">4</button>
+  </div>
+
+  <script>
+    let x = document.getElementsByClassName("leaderboard_row");
+    // called onload
+    setInitialEntries();
+    function setInitialEntries() {
+      for (let i = 1; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (let i = 1; i <= 50; i++) {
+        x[i].style.display = "flex";
+      }
+    }
+    function setEntries(start, end) {
+      for (let i = 1; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (let i = start; i <= end; i++) {
+        x[i].style.display = "flex";
+      }
+    }
+  </script>
+  <%- include('./partials/footer.ejs') %>

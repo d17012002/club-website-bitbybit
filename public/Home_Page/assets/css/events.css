@@ -1,0 +1,27 @@
+#events_section {
+  top: 50%;
+  left: 50%;
+  vertical-align: center;
+  background-color: #fff;
+}
+
+/* carousel */
+.carousel {
+  width: 60%;
+  margin: 20px 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background: none;
+}
+
+.carousel-control-prev > i,
+.carousel-control-next > i {
+  transform: scale(2);
+  color: rgb(240, 240, 240);
+}
+
+.carousel-caption {
+  transform: scale(2);
+}

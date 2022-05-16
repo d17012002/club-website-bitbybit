@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+    <!-- Template Main CSS File -->
+    <link href="/Blog_Page/css/blog.css" rel="stylesheet">
+
+    <main id="main">
+
+
+        <!-- ======= Posts Section ======= -->
+        <section>
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Blogs</h2>
+                </div>
+                <div class="row">
+                    <% for(var i=0; i < posts_arr.length ; i++) { %>
+                        <div class="card card_div col-md-4 col-xs-10 ">
+                            <img class="card-img-top" src=<%=posts_arr[i].thumbnail %> alt="Card image cap">
+
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%= posts_arr[i].title %>
+                                </h4>
+                            </div>
+                            <a href=<%=posts_arr[i].link%> class="btn btn-primary blog-btn">Read More</a>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </section>
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <%- include('./partials/footer.ejs') %>

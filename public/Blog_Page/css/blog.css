@@ -1,0 +1,39 @@
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.card_div {
+    padding: 10px;
+    margin: 20px;
+}
+
+.posts_txt {
+    overflow: hidden;
+}
+
+.card_div>.btn {
+    width: 30%;
+}
+
+.card-body {
+    position: relative;
+    min-width: 100px;
+    padding: 40px 8px;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 20px;
+
+}
+
+@media (max-width: 600px) {
+    .card-title{
+        font-size: 1rem;
+    }
+    .card_div>.btn{
+        font-size: 1rem;
+        width: 80%;
+    }
+}
